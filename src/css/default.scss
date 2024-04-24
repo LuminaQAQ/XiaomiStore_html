@@ -1,0 +1,47 @@
+$dark-bg-color: #333333;
+$dark-text-color: #b0b0a4;
+$dark-text-hover-color: #ffffff;
+$orange-color: rgb(255, 103, 0);
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+
+  height: 100%;
+  width: 100%;
+}
+
+@mixin clear-ul-style {
+  list-style-type: disc;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+  unicode-bidi: isolate;
+  list-style: none;
+}
+
+@mixin img-item($size) {
+  width: $size;
+  height: $size;
+
+  object-fit: cover;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@font-face {
+  font-family: "layui-icon";
+  src: url("../assets/layui/font/iconfont.eot?v=256");
+  src: url("../assets/layui/font/iconfont.eot?v=256#iefix")
+      format("embedded-opentype"),
+    url("../assets/layui/font/iconfont.woff2?v=256") format("woff2"),
+    url("../assets/layui/font/iconfont.woff?v=256") format("woff"),
+    url("../assets/layui/font/iconfont.ttf?v=256") format("truetype"),
+    url("../assets/layui/font/iconfont.svg?v=256#layui-icon") format("svg");
+}

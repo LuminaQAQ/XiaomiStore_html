@@ -1,4 +1,4 @@
-@import "../styles/default.scss";
+@import "../css/default.scss";
 .nav-wrap {
   background-color: $dark-bg-color;
   color: $dark-text-color;
@@ -57,6 +57,8 @@
             position: absolute;
             left: calc(-100% - 9.5rem);
             top: 100%;
+
+            z-index: 888;
 
             cursor: default;
 
