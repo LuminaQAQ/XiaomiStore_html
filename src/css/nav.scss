@@ -1,88 +1,94 @@
 @import "../css/default.scss";
-.nav-wrap {
-  background-color: $dark-bg-color;
-  color: $dark-text-color;
-  padding: 0 0.5rem;
 
+.main-nav-wrap {
   display: flex;
-  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: $dark-bg-color;
 
-  .nav-item-wrap {
-    &.nav-left-wrap {
-      width: 100%;
-    }
+  .nav-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    ul {
-      font-size: 0.9rem;
-      display: flex;
-      align-items: center;
-      width: 100%;
+    width: 76.625rem;
 
-      @include clear-ul-style;
+    color: $dark-text-color;
+    padding: 0 0.5rem;
 
-      .sg-nav-item {
-        position: relative;
-        padding: 0.75rem 0.5rem;
-        cursor: pointer;
+    .nav-item-wrap {
+      ul {
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        width: 100%;
 
-        &:hover {
-          a {
-            color: $dark-text-hover-color;
-          }
-        }
+        @include clear-ul-style;
 
-        &.cart-item {
+        .sg-nav-item {
           position: relative;
-          margin-left: 0;
-          padding: 0.9rem;
-          background-color: #424242;
-          margin-left: 1rem;
+          padding: 0.75rem 0.5rem;
+          cursor: pointer;
 
           &:hover {
-            background-color: #ffffff;
-            color: #ff7212;
-
             a {
+              color: $dark-text-hover-color;
+            }
+          }
+
+          &.cart-item {
+            position: relative;
+            margin-left: 0;
+            padding: 0.9rem;
+            background-color: #424242;
+            margin-left: 1rem;
+
+            &:hover {
+              background-color: #ffffff;
               color: #ff7212;
+
+              a {
+                color: #ff7212;
+              }
+
+              .cart-wrap {
+                height: 8rem;
+                overflow: hidden;
+                box-shadow: 0 0 3px 4px rgba(0, 0, 0, 0.1);
+              }
             }
 
             .cart-wrap {
-              height: 8rem;
+              position: absolute;
+              left: calc(-100% - 9.5rem);
+              top: 100%;
+
+              z-index: 888;
+
+              cursor: default;
+
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
               overflow: hidden;
-              box-shadow: 0 0 3px 4px rgba(0, 0, 0, 0.1);
+              width: 21rem;
+              height: 0;
+              color: #424242;
+
+              background-color: #ffffff;
+
+              transition: height 0.3s, box-shadow 0.3s;
             }
           }
 
-          .cart-wrap {
-            position: absolute;
-            left: calc(-100% - 9.5rem);
-            top: 100%;
-
-            z-index: 888;
-
-            cursor: default;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
+          a {
+            white-space: nowrap;
+            text-overflow: ellipsis;
             overflow: hidden;
-            width: 21rem;
-            height: 0;
-            color: #424242;
-
-            background-color: #ffffff;
-
-            transition: height 0.3s, box-shadow 0.3s;
+            color: $dark-text-color;
+            text-decoration: none;
           }
-        }
-
-        a {
-          white-space: nowrap;
-          text-overflow: ellipsis;
-          overflow: hidden;
-          color: $dark-text-color;
-          text-decoration: none;
         }
       }
     }
