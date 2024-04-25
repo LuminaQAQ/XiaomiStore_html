@@ -354,8 +354,71 @@ sideCollapse.init();
 // #endregion
 // ------- end -------
 
-// -------  -------
+// ------- 小米闪购 -------
 // #region
+const timeLimit = {
+    timeWrap: document.querySelector('.time-wrap'),
 
+    format(segment) {
+        return segment <= 9 ? '0' + segment : segment;
+    },
+
+    divideSegment(segment) {
+        segment = String(segment);
+        const tens = segment[0];
+        const ones = segment[1];
+
+        return {
+            tens,
+            ones,
+        }
+    },
+
+    setData(timeObj) {
+        const htmlString = `
+            <section class="hour">
+                <div class="tens-place">${timeObj.hour.tens}</div>
+                <div class="ones-place">${timeObj.hour.ones}</div>
+            </section>
+            <section class="time-divide">:</section>
+            <section class="minute">
+                <div class="tens-place">${timeObj.minute.tens}</div>
+                <div class="ones-place">${timeObj.minute.ones}</div>
+            </section>
+            <section class="time-divide">:</section>
+            <section class="second">
+                <div class="tens-place">${timeObj.second.tens}</div>
+                <div class="ones-place">${timeObj.second.ones}</div>
+            </section>
+        `;
+
+        this.timeWrap.innerHTML = htmlString;
+    },
+
+    initTimer() {
+        const today = new Date().getDate();
+        const tomrrow = new Date();
+        tomrrow.setDate(today + 1);
+        tomrrow.setHours(0);
+        tomrrow.setMinutes(0);
+        tomrrow.setSeconds(0);
+
+        setInterval(() => {
+            const date = new Date();
+            const now = new Date(tomrrow - date);
+
+            const hour = this.divideSegment(this.format(now.getHours()));
+            const minute = this.divideSegment(this.format(now.getMinutes()));
+            const second = this.divideSegment(this.format(now.getSeconds()));
+
+            this.setData({ hour, minute, second });
+        }, 1000);
+    },
+
+    init() {
+        this.initTimer();
+    }
+}
+timeLimit.init();
 // #endregion
 // ------- end -------

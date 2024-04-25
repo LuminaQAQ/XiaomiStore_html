@@ -8,14 +8,27 @@
 
   width: 100%;
 
+  .swiper-wrap,
+  .cate-and-recommend-wrap,
+  .time-limit-wrap,
+  .cate-header {
+    width: 76.625rem;
+    min-width: 76.625rem;
+  }
+
+  .cate-header {
+    font-weight: 100;
+    color: black;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+
   // 轮播图
   .swiper-wrap {
     position: relative;
     user-select: none;
 
-    width: 76.625rem;
     height: 28.75rem;
-    min-width: 76.625rem;
 
     .swiper-wrap-left {
       position: absolute;
@@ -196,5 +209,89 @@
     .sg-recommend-wrap {
       @include img-item(25%);
     }
+  }
+
+  // 小米闪购
+  .time-limit-wrap {
+    height: 21.25rem;
+    .time-limit-list {
+      display: flex;
+      justify-content: space-evenly;
+      height: 100%;
+
+      // 样式
+      .list-item {
+        background-color: #f1eded;
+        height: 100%;
+        flex: 1 0 calc(20% - 1rem);
+        margin-right: 1rem;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &.empty {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+
+          i {
+            font-size: 3rem;
+            color: #e53934;
+            margin-bottom: 2rem;
+          }
+        }
+
+        $border-arr: (
+          "red": red,
+          "yellow": rgb(255, 191, 0),
+          "green": rgb(0, 191, 0),
+          "blue": rgb(0, 110, 255),
+          "pink": rgb(255, 73, 209),
+        );
+
+        @each $name, $color in $border-arr {
+          &.#{$name} {
+            border-top: 1px solid $color;
+          }
+        }
+      }
+      // 倒计时
+      .list-item {
+        .time-wrap {
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 2rem;
+
+          .hour,
+          .minute,
+          .second {
+            display: flex;
+
+            .tens-place,
+            .ones-place {
+              width: 2rem;
+              height: 2rem;
+              font-size: 2rem;
+              text-align: center;
+              color: #e53934;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.time-divide {
+  opacity: 1;
+  animation: time-divide-blink 1s infinite;
+}
+@keyframes time-divide-blink {
+  50% {
+    opacity: 0.3;
   }
 }
