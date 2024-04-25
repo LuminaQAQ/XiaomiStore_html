@@ -5,8 +5,10 @@
   justify-content: center;
   width: 100%;
 
+  // 轮播图
   .swiper-wrap {
     position: relative;
+    user-select: none;
 
     width: 76.625rem;
     height: 28.75rem;
@@ -25,6 +27,8 @@
       width: 15.1875rem;
       height: 100%;
       padding: 1rem 0;
+
+      z-index: 777;
 
       .sg-swiper-collapse-item {
         width: calc(100% - 2rem);
@@ -75,15 +79,74 @@
       }
     }
 
-    .sg-swiper-img-item {
-      object-fit: cover;
+    .swiper-wrap-right {
+      position: absolute;
       width: 100%;
       height: 100%;
 
-      img {
+      .swiper {
         width: 100%;
         height: 100%;
+        .sg-swiper-img-item {
+          transition: opacity 0.5s;
+
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+
+      .circle-wrap {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        right: 1.5rem;
+        bottom: 1.5rem;
+
+        .sg-cirlce {
+          width: 0.5rem;
+          height: 0.5rem;
+          border-radius: 50%;
+          background-color: rgba(113, 113, 113, 0.666);
+          border: 2px solid rgba(113, 113, 113, 0.666);
+          margin: 0 0.25rem;
+
+          &.active {
+            background-color: rgba(255, 255, 255, 0.7);
+          }
+        }
+      }
+
+      .change-swiper-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        cursor: pointer;
+
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 3rem;
+        padding: 0.5rem;
+
+        &.prev {
+          left: 15.1875rem;
+        }
+
+        &.next {
+          right: 0;
+        }
       }
     }
+  }
+
+  // 分类和推荐
+  .cate-and-recommend-wrap {
+    
   }
 }

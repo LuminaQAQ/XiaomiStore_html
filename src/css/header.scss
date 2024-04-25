@@ -74,6 +74,8 @@
   }
 
   .dropdown-board {
+    z-index: 999;
+    background-color: white;
     position: absolute;
     left: 0;
     top: 100%;

@@ -97,17 +97,133 @@ searchPlacehoder.init();
 // ------- 轮播图 -------
 // #region
 const swiperOpt = {
+    wrap: document.querySelector('.swiper-wrap-right'),
+    swiperWrap: document.querySelector('.swiper'),
+
+    circleWrap: document.querySelector('.circle-wrap'),
+
+    prevBtn: document.querySelector('.change-swiper-btn.prev'),
+    nextBtn: document.querySelector('.change-swiper-btn.next'),
+
+    curSwiper: 0,
+    swiperData: fetchSwiperData(),
+
+    timer: null,
+
+    handleSwiperChange() {
+        const swipers = document.querySelectorAll('.sg-swiper-img-item');
+        const circles = document.querySelectorAll('.sg-cirlce');
+
+        for (let i = 0; i < swipers.length; i++) {
+            swipers[i].style.opacity = 0;
+            circles[i].className = 'sg-cirlce';
+        }
+
+        if (this.curSwiper >= swipers.length) this.curSwiper = 0;
+        if (this.curSwiper < 0) this.curSwiper = this.swiperData.length - 1;
+
+        swipers[this.curSwiper].style.opacity = 1;
+        circles[this.curSwiper].className = 'sg-cirlce active';
+    },
+
+    swiperInit(interval) {
+        const that = this;
+
+
+        this.timer = setInterval(() => {
+            that.curSwiper++;
+            this.handleSwiperChange();
+        }, interval);
+
+        this.wrap.addEventListener('mouseover', function () {
+            clearInterval(that.timer);
+            that.timer = null;
+        })
+
+        this.wrap.addEventListener('mouseleave', function () {
+            that.timer = setInterval(() => {
+                that.curSwiper++;
+                that.handleSwiperChange();
+            }, interval);
+        })
+    },
+
+    circlesInit(interval) {
+        const that = this;
+        this.circleWrap.innerHTML = '';
+
+        for (let i = 0; i < this.swiperData.length; i++) {
+            const htmlString = `
+                <div class="sg-cirlce"></div>
+            `;
+
+            this.circleWrap.innerHTML += htmlString;
+        }
+
+        const circles = document.querySelectorAll('.sg-cirlce');
+        circles[this.curSwiper].className = 'sg-cirlce active';
+
+        for (let i = 0; i < circles.length; i++) {
+            circles[i].addEventListener('click', function () {
+                that.curSwiper = i;
+                clearInterval(that.timer);
+
+                that.handleSwiperChange();
+
+                that.timer = setTimeout(() => {
+                    that.handleSwiperChange();
+                }, interval);
+            })
+        }
+    },
+
+    nextPrevInit(interval) {
+        const that = this;
+
+        this.prevBtn.addEventListener('click', function () {
+            that.curSwiper--;
+            clearInterval(that.timer);
+            that.handleSwiperChange();
+        });
+
+        this.nextBtn.addEventListener('click', function () {
+            that.curSwiper++;
+            that.timer = setInterval(() => {
+                that.handleSwiperChange();
+            }, interval);
+            that.handleSwiperChange();
+        });
+    },
+
+    setData() {
+        this.swiperWrap.innerHTML = '';
+
+        this.swiperData.forEach(item => {
+            const htmlString = `
+                <div class="sg-swiper-img-item">
+                    <img src="${item.src}" alt="">
+                </div>
+            `;
+            this.swiperWrap.innerHTML += htmlString;
+        })
+    },
+
+    optInit(interval) {
+        this.setData();
+        this.swiperInit(interval);
+        this.nextPrevInit(interval);
+        this.circlesInit(interval);
+    },
 
     init() {
-        const data = fetchSwiperData();
-        console.log(data);
+        this.optInit(4000);
     }
 }
 swiperOpt.init();
 // #endregion
 // ------- end -------
 
-// ------- 轮播图侧边栏展开 -------
+// -------  轮播图侧边栏展开 -------
 // #region
 const sideCollapse = {
     boards: document.querySelectorAll('.item-sider-collapse-board'),
