@@ -2,7 +2,10 @@
 
 .main-center-wrap {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+
   width: 100%;
 
   // 轮播图
@@ -12,6 +15,7 @@
 
     width: 76.625rem;
     height: 28.75rem;
+    min-width: 76.625rem;
 
     .swiper-wrap-left {
       position: absolute;
@@ -147,6 +151,50 @@
 
   // 分类和推荐
   .cate-and-recommend-wrap {
-    
+    width: 76.625rem;
+    min-width: 76.625rem;
+
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+
+    .cate-wrap,
+    .sg-recommend-wrap {
+      width: 25%;
+    }
+
+    .cate-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      width: calc(15.1875rem);
+
+      .sg-cate-item {
+        width: calc(33% - 2rem);
+        flex: 1 0 calc(33% - 2rem);
+
+        padding: 1rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        background-color: #5f5750;
+        color: white;
+        font-size: 0.7rem;
+
+        i {
+          font-size: 1.5rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      .sg-recommend-wrap {
+        background-color: #5f5750;
+      }
+    }
+
+    .sg-recommend-wrap {
+      @include img-item(25%);
+    }
   }
 }
