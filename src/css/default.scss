@@ -52,7 +52,7 @@ body {
   transition: box-shadow $second, transform $second;
 
   &:hover {
-    box-shadow: 0 0 3px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
 
     transform: translateY(-2px);
   }
