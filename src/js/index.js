@@ -613,6 +613,8 @@ reviewProduct.init();
 // ------- end -------
 
 
+// ------- 回到顶部 -------
+// #region
 const toTopBtn = document.querySelector('.to-top');
 window.addEventListener('scroll', function (e) {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -628,3 +630,5 @@ toTopBtn.addEventListener('click', function () {
         behavior: "smooth",
     })
 })
+// #endregion
+// ------- end -------

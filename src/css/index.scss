@@ -20,7 +20,6 @@
     }
   }
 }
-
 .main-center-wrap {
   display: flex;
   flex-direction: column;
@@ -48,19 +47,6 @@
 
   /* #endregion */
   /* ------- end  ------- */
-
-  .swiper-wrap,
-  .cate-and-recommend-wrap,
-  .time-limit-wrap,
-  .cate-header,
-  .banner-ad-wrap,
-  .sg-main-category-wrap,
-  .main-recommend-wrap,
-  .main-comment-wrap,
-  .footer-wrap {
-    width: 76.625rem;
-    min-width: 76.625rem;
-  }
 
   // 轮播图
   .swiper-wrap {
@@ -512,6 +498,19 @@
       }
     }
   }
+}
+
+.swiper-wrap,
+.cate-and-recommend-wrap,
+.time-limit-wrap,
+.cate-header,
+.banner-ad-wrap,
+.sg-main-category-wrap,
+.main-recommend-wrap,
+.main-comment-wrap,
+.footer-wrap {
+  width: 1226px;
+  min-width: 1226px;
 }
 
 /* ------- 时间分隔符闪烁 ------- */
