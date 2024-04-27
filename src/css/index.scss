@@ -1,5 +1,26 @@
 @import "./default.scss";
 
+// 侧边工具组
+.sidebar-tool-wrap {
+  position: fixed;
+  right: 0;
+  bottom: 5rem;
+  z-index: 1000;
+
+  .sg-tool-item {
+    background-color: white;
+    font-size: 0.5rem;
+    text-align: center;
+    i {
+      font-size: 1.5rem;
+    }
+
+    &.to-top {
+      padding: 0.5rem;
+    }
+  }
+}
+
 .main-center-wrap {
   display: flex;
   flex-direction: column;
@@ -491,7 +512,6 @@
       }
     }
   }
-
 }
 
 /* ------- 时间分隔符闪烁 ------- */
