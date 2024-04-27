@@ -7,8 +7,8 @@
   justify-content: center;
 
   .header-wrap {
-    width: 76.625rem;
-    min-width: 76.625rem;
+    width: 1226px;
+    min-width: 1226px;
     // background-color: aquamarine;
     padding: 0 1rem;
     position: relative;
@@ -23,6 +23,7 @@
       padding: 1rem;
 
       .site-icon {
+        display: block;
         height: 5rem;
         width: 5rem;
 
