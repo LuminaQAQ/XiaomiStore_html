@@ -10,6 +10,7 @@ import { fetchData } from '../api/fetchDropdown.js'
 import { fetchSwiperData } from "../api/fetchSwiperData"
 import { fetchApplianceData } from "../api/fetchCategory"
 import { fetchRecommendData } from "../api/fetchRecommendData"
+import { fetchReviewData } from "../api/fetchReviewData"
 
 // ------- 导航栏下拉 -------
 // #region
@@ -486,7 +487,7 @@ spacialCategory.init();
 // ------- end -------
 
 
-// -------  -------
+// ------- 为你推荐渲染 -------
 // #region
 const recommendSystem = {
     wrap: document.querySelector('.recommend-list').querySelector('.sg-cate-goods-item'),
@@ -565,5 +566,47 @@ const recommendSystem = {
     }
 }
 recommendSystem.init();
+// #endregion
+// ------- end -------
+
+// ------- 热评产品 -------
+// #region
+const reviewProduct = {
+    wrap: document.querySelector('.comment-list .sg-cate-goods-item'),
+
+    setData() {
+        const data = fetchReviewData();
+        this.wrap.innerHTML = '';
+
+        data.forEach(item => {
+            const htmlString = `
+                <section class="row-item">
+                    <section class="item-img">
+                        <img src="${item.imgSrc}" alt="">
+                    </section>
+                    <div class="item-info">
+                        <span class="comment">${item.comment}</span>
+                        <span class="desc">${item.author}</span>
+
+                        <div class="product-info">
+                            <span class="name">${item.goods}</span> 
+                            <span class="desc">|</span>
+                            <span class="price">
+                                <span class="num">${item.price}</span>
+                            </span>
+                        </div>
+                    </div>
+                </section>
+            `;
+
+            this.wrap.innerHTML += htmlString;
+        })
+    },
+
+    init() {
+        this.setData();
+    }
+}
+reviewProduct.init();
 // #endregion
 // ------- end -------
