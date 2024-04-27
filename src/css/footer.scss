@@ -1,0 +1,58 @@
+@import "../css/default.scss";
+
+// 页脚
+.main-footer-wrap {
+  display: flex;
+  justify-content: center;
+  width: calc(100% - 2rem);
+  padding: 1.5rem 1rem;
+
+  background-color: white;
+
+  .footer-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 76.625rem;
+
+    padding: 0 0.5rem;
+
+    .footer-col {
+      .col-header {
+        font-size: 1.15rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .col-item {
+        color: rgb(84, 84, 84);
+        margin: 0.5rem 0;
+      }
+
+      .btn {
+        text-align: center;
+        padding: 0.25rem 1.25rem;
+        &.btn-primary {
+          border: 1.5px solid #ff6700;
+          color: #ff6700;
+        }
+      }
+
+      &.else-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .phone {
+          margin-bottom: 0.25rem;
+          font-size: 1.375rem;
+          line-height: 1;
+          color: #ff6700;
+        }
+        .time,
+        .btn {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}

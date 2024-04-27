@@ -17,9 +17,6 @@
     color: black;
     font-size: 1.5rem;
     margin: 1rem 0;
-
-    &.has-tab-field {
-    }
   }
 
   // 长条推荐(?广告)
@@ -38,7 +35,8 @@
   .banner-ad-wrap,
   .sg-main-category-wrap,
   .main-recommend-wrap,
-  .main-comment-wrap {
+  .main-comment-wrap,
+  .footer-wrap {
     width: 76.625rem;
     min-width: 76.625rem;
   }
@@ -265,10 +263,10 @@
         }
 
         $border-arr: (
-          "red": red,
-          "yellow": rgb(255, 191, 0),
-          "green": rgb(0, 191, 0),
-          "blue": rgb(0, 110, 255),
+          "red": #e53935,
+          "yellow": #ffac13,
+          "green": #83c44e,
+          "blue": #2196f3,
           "pink": rgb(255, 73, 209),
         );
 
@@ -484,6 +482,16 @@
       }
     }
   }
+
+  // 内容
+  .main-content-wrap {
+    .content-list {
+      .list-item {
+        background-color: white;
+      }
+    }
+  }
+
 }
 
 /* ------- 时间分隔符闪烁 ------- */

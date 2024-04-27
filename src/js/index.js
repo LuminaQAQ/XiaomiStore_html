@@ -2,6 +2,7 @@
 import "../css/default.scss"
 import "../css/header.scss"
 import "../css/nav.scss"
+import "../css/footer.scss"
 import "../css/index.scss"
 
 import "../css/swiper.scss"
@@ -610,3 +611,5 @@ const reviewProduct = {
 reviewProduct.init();
 // #endregion
 // ------- end -------
+
+
