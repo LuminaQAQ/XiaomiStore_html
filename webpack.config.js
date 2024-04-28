@@ -7,15 +7,14 @@ module.exports = {
   mode: 'development',
   entry: {
     index: path.join(__dirname, '/src/js/', 'index.js'),
-    // about: path.join(__dirname, '/src/js/', 'about.js'),
+    login: path.join(__dirname, '/src/js/', 'login.js'),
   },
   watch: true,
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: "[name].bundle.js"
+    filename: "js/[name].bundle.js"
   },
   module: {
-
     rules: [
       {
         test: /\.m?js$/,
@@ -32,7 +31,7 @@ module.exports = {
         use: [
           'style-loader',
           'css-loader',
-          'sass-loader'
+          'sass-loader',
         ],
       },
       {
@@ -54,23 +53,25 @@ module.exports = {
             }
           }
         ]
-      }
+      },
     ]
   },
   resolve: {
-    extensions: ['.json', '.js', '.jsx']
+    extensions: ['.json', '.js',]
   },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/pages/index.html',
       chunks: ['index'],
+      inject: true,
     }),
-    // new HtmlWebpackPlugin({
-    //   filename: 'about.html',
-    //   template: './src/about.html',
-    //   chunks: ['about']
-    // }),
+    new HtmlWebpackPlugin({
+      filename: 'login.html',
+      template: './src/pages/login.html',
+      chunks: ['login'],
+      inject: true,
+    }),
     new webpack.HotModuleReplacementPlugin(),
   ],
   devServer: {

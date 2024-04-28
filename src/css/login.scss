@@ -1,0 +1,28 @@
+.main-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+
+  .login-show-img {
+    flex: 1 0 25%;
+    max-width: 25%;
+    height: 100%;
+
+    background-image: url("https://cdn.web-global.fds.api.mi-img.com/mcfe--mi-account/static/static/media/banner.92c693b4..jpg");
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+
+  .main-login-wrap {
+    position: relative;
+    flex: 1 0 75%;
+    max-width: 75%;
+
+    .login-wrap {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

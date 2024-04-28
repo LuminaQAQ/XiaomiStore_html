@@ -30,6 +30,7 @@
     "axios": "^1.6.8",
     "file-loader": "^6.2.0",
     "jquery": "^3.7.1",
-    "layui": "^2.9.8"
+    "layui": "^2.9.8",
+    "resolve-url-loader": "^5.0.0"
   }
 }
