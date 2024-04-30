@@ -1,3 +1,5 @@
+$xiaomi-theme: #ff6b0f;
+
 .main-container {
   display: flex;
   height: 100%;
@@ -19,10 +21,171 @@
     max-width: 75%;
 
     .login-wrap {
+      padding: 2rem;
+
       position: absolute;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
+      background-color: #ffffff;
+
+      border-radius: 8px;
+
+      .login-tabs-wrap {
+        position: relative;
+        display: flex;
+        font-size: 1.25rem;
+
+        .sg-tab {
+          padding-right: 1rem;
+          padding-left: 0;
+          cursor: pointer;
+        }
+
+        .tab-underline {
+          position: absolute;
+          bottom: -0.5rem;
+          left: 0;
+          border-radius: 999px;
+
+          display: block;
+          width: 2.5rem;
+          height: 0.25rem;
+          background-color: $xiaomi-theme;
+
+          transition: left 0.3s;
+        }
+      }
+
+      .login-form-wrap {
+        .login-form {
+          position: relative;
+          margin: 1.75rem 0;
+          margin-bottom: 0.75rem;
+
+          .input-wrap {
+            position: relative;
+            margin: 1rem 0;
+
+            #account,
+            #psd {
+              outline: 0;
+              border: 0;
+              padding: 1.5rem 1rem;
+              padding-bottom: 0.5rem;
+              background-color: #f9f9f9;
+              border-radius: 8px;
+            }
+
+            .form-label {
+              position: absolute;
+              left: 1rem;
+              top: 50%;
+              transform: translateY(calc(-100% - 0.25rem));
+              color: #ccc;
+              transition: font-size 0.3s, top 0.3s;
+
+              &.focus {
+                font-size: 0.5rem;
+                top: 1.5rem;
+              }
+
+              &.invalid {
+                color: red;
+              }
+            }
+
+            .form-tip {
+              margin-top: 0.75rem;
+
+              height: 0.75rem;
+              font-size: 0.75rem;
+              line-height: 0.75rem;
+
+              &.invalid {
+                color: red;
+              }
+            }
+          }
+
+          .checkbox-wrap {
+            margin-top: 0.25rem;
+            margin-bottom: 1rem;
+
+            display: flex;
+            justify-items: center;
+            color: rgb(149, 149, 149);
+
+            a {
+              color: black;
+            }
+
+            label {
+              font-size: 0.6rem;
+              margin-left: 0.25rem;
+            }
+          }
+
+          .submit-wrap {
+            .btn-primary {
+              width: 100%;
+              border: 0;
+              padding: 1rem;
+              border-radius: 8px;
+              background-color: $xiaomi-theme;
+              color: white;
+
+              cursor: pointer;
+              transition: background-color 0.3s;
+
+              &:hover {
+                background-color: lighten($xiaomi-theme, 10);
+              }
+            }
+          }
+        }
+      }
+
+      .handle-login-type-wrap {
+        margin-bottom: 0.75rem;
+        display: flex;
+        justify-content: space-between;
+        a {
+          color: $xiaomi-theme !important;
+        }
+      }
+
+      .another-type-wrap {
+        .anothe {
+          text-align: center;
+          i {
+            font-size: 2rem;
+            margin: 0 0.5rem;
+          }
+          .layui-icon-login-wechat {
+            color: #1e9c4b;
+          }
+          .layui-icon-login-qq {
+            color: #0086d6;
+          }
+          .layui-icon-login-weibo {
+            color: #f36665;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 28rem) {
+  .main-container {
+    .login-show-img {
+      display: none;
+    }
+
+    .main-login-wrap {
+      flex: 1 0 auto;
+      max-width: none;
     }
   }
 }

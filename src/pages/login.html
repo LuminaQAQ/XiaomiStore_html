@@ -15,33 +15,56 @@
         <section class="login-show-img"></section>
         <section class="main-login-wrap">
             <div class="login-wrap">
+                <!-- tab栏 -->
                 <div class="login-tabs-wrap">
                     <div class="sg-tab">登陆</div>
                     <div class="sg-tab">注册</div>
+                    <span class="tab-underline"></span>
                 </div>
+
+                <!-- 表单 -->
                 <div class="login-form-wrap">
                     <form class="login-form">
-                        <section>
-                            <input type="text">
+
+                        <!-- 账号 -->
+                        <section class="input-wrap">
+                            <input id="account" class="btn" name="account" type="text" autocomplete="new-password">
+                            <label id="account-label" for="account" class="form-label">邮箱/手机号码/小米ID</label>
+                            <section id="account-tip" class="form-tip"></section>
                         </section>
-                        <section>
-                            <input type="password">
+
+                        <!-- 密码 -->
+                        <section class="input-wrap">
+                            <input id="psd" class="btn" name="psd" type="password" autocomplete="new-password">
+                            <label id="psd-label" for="psd" class="form-label">密码</label>
+                            <section id="psd-tip" class="form-tip"></section>
                         </section>
-                        <section>
+
+                        <!-- 同意条款 -->
+                        <section class="checkbox-wrap">
                             <input id="agree" name="agree" type="checkbox">
-                            <label for="agree">已阅读并同意小米账号 用户协议 和 隐私政策</label>
+                            <label for="agree">
+                                已阅读并同意小米账号
+                                <a href="javascript:;">用户协议</a> 和 <a href="javascript:;">隐私政策</a>
+                            </label>
                         </section>
-                        <section>
-                            <input type="submit" value="登陆">
+
+                        <!-- 提交 -->
+                        <section class="submit-wrap">
+                            <input class="btn-primary" type="submit" value="登陆">
                         </section>
                     </form>
                 </div>
+
+                <!--  -->
                 <div class="handle-login-type-wrap">
-                    <a href="javascript:;">忘记密码</a>
+                    <a href="javascript:;">忘记密码?</a>
                     <a href="javascript:;">手机号登陆</a>
                 </div>
+
+                <!-- 其他方式登陆 -->
                 <div class="another-type-wrap">
-                    <section>其他方式登陆</section>
+                    <section style="text-align: center; margin-bottom: 1rem;">其他方式登陆</section>
                     <div class="anothe">
                         <i class="layui-icon layui-icon-login-wechat"></i>
                         <i class="layui-icon layui-icon-login-qq"></i>
