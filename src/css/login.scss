@@ -23,6 +23,8 @@ $xiaomi-theme: #ff6b0f;
     .login-wrap {
       padding: 2rem;
 
+      width: calc(80% - 4rem);
+
       position: absolute;
       left: 50%;
       top: 50%;
@@ -69,6 +71,7 @@ $xiaomi-theme: #ff6b0f;
 
             #account,
             #psd {
+              width: calc(100% - 2rem);
               outline: 0;
               border: 0;
               padding: 1.5rem 1rem;
