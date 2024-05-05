@@ -4,8 +4,9 @@
 .main-footer-wrap {
   display: flex;
   justify-content: center;
-  width: calc(100% - 2rem);
-  padding: 1.5rem 1rem;
+  box-sizing: border-box;
+  width: calc(100%);
+  padding: 1.5rem 0rem;
 
   background-color: white;
 
@@ -17,7 +18,7 @@
     width: 1226px;
     min-width: 1226px;
 
-    padding: 0 0.5rem;
+    padding: 0;
 
     .footer-col {
       .col-header {

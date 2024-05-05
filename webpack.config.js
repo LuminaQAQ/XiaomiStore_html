@@ -8,6 +8,7 @@ module.exports = {
   entry: {
     index: path.join(__dirname, '/src/js/', 'index.js'),
     login: path.join(__dirname, '/src/js/', 'login.js'),
+    goodsDetails: path.join(__dirname, '/src/js/', 'goodsDetails.js'),
   },
   watch: true,
   output: {
@@ -70,6 +71,12 @@ module.exports = {
       filename: 'login.html',
       template: './src/pages/login.html',
       chunks: ['login'],
+      inject: true,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'goodsDetails.html',
+      template: './src/pages/goodsDetails.html',
+      chunks: ['goodsDetails'],
       inject: true,
     }),
     new webpack.HotModuleReplacementPlugin(),

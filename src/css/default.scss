@@ -10,6 +10,7 @@ body {
 
   height: 100%;
   width: 100%;
+  min-width: calc(76.625rem);
 
   background-color: #f5f5f5;
 }
@@ -55,5 +56,26 @@ body {
     box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
 
     transform: translateY(-2px);
+  }
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  outline: 0;
+}
+
+.btn {
+  border: 0;
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &.btn-primary {
+    background-color: #ff6b0f;
+    color: white;
+    transition: background-color 0.3s;
   }
 }
