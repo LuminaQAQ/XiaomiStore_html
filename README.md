@@ -1,6 +1,6 @@
 # 一. 技术栈 + 参考网站 + 预览
 
-- webpack + html + scss + js + layui 图标库
+- webpack + html + scss + js + layui
 
 - 因为小米商城直接分了 PC 端和移动端, 所以没做媒体查询
 
@@ -17,6 +17,8 @@
   - [首页](https://luminaqaq.github.io/XiaomiStore_html/)
 
   - [登陆](https://luminaqaq.github.io/XiaomiStore_html/login.html)
+
+  - [商品详情](https://luminaqaq.github.io/XiaomiStore_html/goodsDetails.html.html)
 
 # 二. 完成情况
 
@@ -40,7 +42,7 @@
 
 - [x] 登陆页(虽然写了 tab 栏而且写了切换动画, 但因为注册长的差不多, 就懒得写了)
 
-- [ ] 商品详情页
+- [x] 商品详情页
 
 # 三. 使用
 
