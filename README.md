@@ -18,7 +18,7 @@
 
   - [登陆](https://luminaqaq.github.io/XiaomiStore_html/login.html)
 
-  - [商品详情](https://luminaqaq.github.io/XiaomiStore_html/goodsDetails.html.html)
+  - [商品详情](https://luminaqaq.github.io/XiaomiStore_html/goodsDetails.html)
 
 # 二. 完成情况
 
